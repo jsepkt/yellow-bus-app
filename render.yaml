@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: yellow-bus-app
+    env: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn yellow_bus_app.wsgi"
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: yellow_bus_app.settings
+      - key: SECRET_KEY
+        sync: false  # You’ll set this manually in the Render dashboard
