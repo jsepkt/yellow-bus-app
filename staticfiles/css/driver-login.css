@@ -1,0 +1,17 @@
+.login-container {
+    background-color: #fff176; /* yellow background */
+    font-family: 'Comic Neue', cursive;
+  }
+  
+  .login-card {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  .logo {
+    animation: zoomIn 0.6s ease-in-out;
+  }
+  
