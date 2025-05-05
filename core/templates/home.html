@@ -1,9 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Yellow Bus</title>
-</head>
-<body>
-  <h1>🚍 Yellow Bus App is running!</h1>
-</body>
-</html>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home | Yellow Bus{% endblock %}
+
+{% block content %}
+<div class="container text-center py-5">
+  <img src="{% static 'img/school-bus.png' %}" alt="Yellow Bus Logo" width="120" class="bus-icon mb-3" />
+  <h1 class="fw-bold">Welcome to Yellow Bus</h1>
+  <p class="lead">Your School Bus Safety and Management System</p>
+
+  <div class="mt-4">
+    <a href="{% url 'driver_login' %}" class="btn zoom-btn driver">Driver Login</a>
+    <a href="{% url 'parent_login' %}" class="btn zoom-btn parent">Parent Login</a>
+    <a href="{% url 'student_login' %}" class="btn zoom-btn student">Student Login</a>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,31 @@
+.bus-icon {
+    animation: zoomIn 0.6s ease-in-out;
+  }
+  
+  .zoom-btn {
+    transition: transform 0.3s ease;
+    font-weight: 600;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 10px;
+  }
+  
+  .zoom-btn:hover {
+    transform: scale(1.08);
+  }
+  
+  .zoom-btn.driver {
+    background-color: #a5d6a7; /* light green */
+    color: #000;
+  }
+  
+  .zoom-btn.parent {
+    background-color: #81d4fa; /* sky blue */
+    color: #000;
+  }
+  
+  .zoom-btn.student {
+    background-color: #fff59d; /* soft yellow */
+    color: #000;
+  }
+  

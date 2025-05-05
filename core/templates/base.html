@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>{% block title %}Yellow Bus{% endblock %}</title>
+  <link rel="icon" href="{% static 'img/favicon.png' %}" />
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/home.css' %}">
+  <link rel="stylesheet" href="{% static 'css/driver-login.css' %}">
+  {% block extra_css %}{% endblock %}
+</head>
+<body style="font-family: 'Comic Neue', cursive;" class="d-flex flex-column min-vh-100">
+
+  <!-- Main Content -->
+  <main class="flex-grow-1">
+    {% block content %}
+    <!-- Child page content will go here -->
+    {% endblock %}
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center py-3 bg-light border-top mt-auto">
+    <small>
+      © 2025 Yellow Bus App • Developed by 
+      <a href="https://github.com/jsepkt/yellow-bus-app" target="_blank">Pillow Gold Developers LLC</a> • 
+      <a href="#">Terms</a> • <a href="#">Privacy</a>
+    </small>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+  {% block extra_js %}{% endblock %}
+</body>
+</html>
