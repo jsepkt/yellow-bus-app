@@ -19,18 +19,27 @@
         <p class="text-muted">Enter your route number and name to continue</p>
       </div>
 
-      <form id="studentLoginForm">
+      {% if messages %}
+        <div class="alert alert-danger" role="alert">
+          {% for message in messages %}
+            {{ message }}
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      <form method="POST" novalidate>
+        {% csrf_token %}
         <div class="mb-3">
           <label for="routeNumber" class="form-label">Route Number</label>
-          <input type="text" class="form-control" id="routeNumber" required>
+          <input type="text" class="form-control" id="routeNumber" name="route_number" required>
         </div>
         <div class="mb-3">
           <label for="firstName" class="form-label">First Name</label>
-          <input type="text" class="form-control" id="firstName" required>
+          <input type="text" class="form-control" id="firstName" name="first_name" required>
         </div>
         <div class="mb-3">
           <label for="lastName" class="form-label">Last Name</label>
-          <input type="text" class="form-control" id="lastName" required>
+          <input type="text" class="form-control" id="lastName" name="last_name" required>
         </div>
 
         <button type="submit" class="btn btn-dark w-100">Login</button>
@@ -43,6 +52,5 @@
     </div>
   </div>
 
-  <script src="{% static 'js/student/login.js' %}"></script>
 </body>
 </html>
