@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User
-from django.contrib.auth import login
+from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
@@ -73,10 +73,23 @@ def parent_login(request):
 # ------------------------ Driver Views ------------------------
 
 def driver_login(request):
+    if request.method == "POST":
+        email = request.POST.get("email")
+        password = request.POST.get("password")
+
+        user = authenticate(request, username=email, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('driver_dashboard')
+        else:
+            messages.error(request, "Invalid email or password.")
+
     return render(request, 'driver-login.html')
+
 
 def driver_forgot_password(request):
     return render(request, 'driver-forgot-password.html')
+
 
 def driver_signup(request):
     if request.method == "POST":
@@ -101,7 +114,7 @@ def driver_signup(request):
         DriverProfile.objects.create(user=user, school_district=school_district)
         login(request, user)
 
-        return redirect('driver_dashboard')  # Placeholder, implement later
+        return redirect('driver_dashboard')
 
     return render(request, 'driver-signup.html')
 
@@ -227,7 +240,9 @@ def driver_stops(request):
     stops = Stop.objects.all()
     return render(request, 'driver_dashboard/stops.html', {'stops': stops})
 
+
+# ------------------------ Driver Dashboard Home ------------------------
+
 @login_required
 def driver_dashboard_home(request):
     return render(request, 'driver_dashboard/driver-dashboard.html')
-
