@@ -70,6 +70,8 @@ TEMPLATES = [
     },
 ]
 
+LOGIN_URL = '/driver-login/'
+
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
