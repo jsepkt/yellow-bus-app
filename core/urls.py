@@ -11,7 +11,6 @@ urlpatterns = [
     path('forgot-password/', views.driver_forgot_password, name='driver_forgot_password'),
     path('driver-dashboard/', driver_dashboard_home, name='driver_dashboard'),
 
-
     # Student Auth
     path('student-login/', views.student_login, name='student_login'),
     path('student-dashboard/', views.student_dashboard, name='student_dashboard'),

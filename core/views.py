@@ -226,3 +226,8 @@ def manage_stops(request, route_id):
 def driver_stops(request):
     stops = Stop.objects.all()
     return render(request, 'driver_dashboard/stops.html', {'stops': stops})
+
+@login_required
+def driver_dashboard_home(request):
+    return render(request, 'driver_dashboard/driver-dashboard.html')
+
