@@ -80,6 +80,8 @@ def driver_login(request):
         user = authenticate(request, username=email, password=password)
         if user is not None:
             login(request, user)
+            # 👇 Redirect to 'next' if present in URL query string
+            next_url = request.GET.get('next')
             return redirect('driver_dashboard')
         else:
             messages.error(request, "Invalid email or password.")
