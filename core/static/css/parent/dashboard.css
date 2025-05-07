@@ -1,0 +1,62 @@
+/* parent/dashboard.css */
+
+/* General Typography */
+body {
+    font-family: 'Comic Neue', cursive;
+    background-color: #FFF200;
+    margin: 0;
+  }
+  
+  /* Card Titles */
+  .card h5 {
+    font-weight: bold;
+  }
+  
+  /* List Group Styling */
+  #conductReports li {
+    transition: all 0.2s ease-in-out;
+  }
+  #conductReports li:hover {
+    background-color: #fff8c6;
+  }
+  
+  /* Request Form */
+  #parentRequestForm textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  #requestSuccess {
+    font-weight: bold;
+  }
+  
+  /* Responsive Padding */
+  @media (min-width: 768px) {
+    .container {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+  }
+  
+  /* Navbar */
+  .navbar {
+    font-weight: bold;
+  }
+  
+  /* Footer */
+  footer {
+    font-size: 0.9rem;
+  }
+  
+  /* Buttons */
+  button:focus,
+  .btn:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  
+  /* Spinner if you add loader later */
+  #globalLoader {
+    display: flex;
+  }
+  

@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Parent Dashboard | Yellow Bus</title>
+  <link rel="icon" href="{% static 'img/favicon.png' %}" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="{% static 'css/parent/dashboard.css' %}">
+</head>
+<body style="background-color: #FFF200; font-family: 'Comic Neue', cursive;">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-dark bg-dark px-4">
+    <a class="navbar-brand" href="#">🚌 Yellow Bus</a>
+    <div class="ms-auto text-white">
+      <a href="/parent-login/" class="btn btn-sm btn-outline-light">Logout</a>
+    </div>
+  </nav>
+
+  <a href="#" id="logoutBtn" class="btn btn-sm btn-outline-light">Logout</a>
+
+
+  <!-- Dashboard Section -->
+  <div class="container py-5">
+    <div class="text-center mb-4">
+      <h2>Welcome, Parent!</h2>
+      <p class="lead">Here’s your child’s bus and behavior info:</p>
+    </div>
+
+    <!-- Student Info -->
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card shadow p-3">
+          <h5>Student Name</h5>
+          <p class="fs-5" id="studentName">-</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow p-3">
+          <h5>Route Number</h5>
+          <p class="fs-5" id="routeNumber">-</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow p-3">
+          <h5>Seat Number</h5>
+          <p class="fs-5" id="seatNumber">-</p>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card shadow p-3">
+          <h5>Pickup Time</h5>
+          <p class="fs-5" id="pickupTime">-</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card shadow p-3">
+          <h5>Drop-off Time</h5>
+          <p class="fs-5" id="dropoffTime">-</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Conduct Reports -->
+    <div class="mt-5">
+      <h4 class="mb-3">🚨 Conduct Reports</h4>
+      <ul id="conductReports" class="list-group">
+        <li class="list-group-item text-muted">No reports found.</li>
+      </ul>
+    </div>
+
+    <!-- Parent Request Form -->
+    <div class="mt-5">
+      <h4>📩 Message the Driver</h4>
+      <form id="parentRequestForm" class="card p-4 shadow">
+        <div class="mb-3">
+          <label for="requestMessage" class="form-label">Your Message</label>
+          <textarea class="form-control" id="requestMessage" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-dark w-100">Submit Request</button>
+        <div id="requestSuccess" class="text-success text-center mt-3 d-none">Message sent successfully!</div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center py-3 bg-dark text-white mt-5">
+    Developed by Pillow Gold Developers LLC | All rights reserved |
+    <a href="#" class="text-white text-decoration-underline">Terms</a> |
+    <a href="#" class="text-white text-decoration-underline">Conditions</a>
+  </footer>
+
+  <!-- Logic -->
+  <script type="module" src="{% static 'js/parent/parent-dashboard.js' %}"></script>
+</body>
+</html>

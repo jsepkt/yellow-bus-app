@@ -16,15 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from core import views
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('core.urls')),  # include core app's urls
-    path('parent-login/', views.parent_login, name='parent_login'),
-    path('student-login/', views.student_login, name='student_login'),
+    path('', include('core.urls')),  # all routes from core app
 ]
 
 if settings.DEBUG:

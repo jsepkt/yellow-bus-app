@@ -8,7 +8,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
 // ==== DOM ELEMENTS ====
-const loginForm = document.getElementById("studentLoginForm");
+const loginForm = document.getElementById("parentLoginForm");
 
 loginForm.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -37,16 +37,17 @@ loginForm.addEventListener("submit", async (e) => {
       const studentDoc = querySnapshot.docs[0];
       const studentId = studentDoc.id;
 
-      // Save to localStorage or sessionStorage
-      localStorage.setItem("studentId", studentId);
+      // Store in localStorage for dashboard access
+      localStorage.setItem("parentStudentId", studentId);
 
       // Redirect to dashboard
-      window.location.href = "/student-dashboard/";  // Django URL name
+      window.location.href = "/parent-dashboard/";
     } else {
-      alert("❌ Student not found. Please check your details.");
+      alert("Student not found. Please check the details.");
     }
-  } catch (err) {
-    console.error("Login error:", err);
-    alert("Something went wrong. Please try again.");
+
+  } catch (error) {
+    console.error("Login error:", error);
+    alert("Something went wrong. Try again.");
   }
 });
