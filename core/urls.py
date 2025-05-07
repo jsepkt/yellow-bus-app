@@ -9,6 +9,8 @@ urlpatterns = [
     path('driver-login/', views.driver_login, name='driver_login'),
     path('driver-signup/', views.driver_signup, name='driver_signup'),
     path('forgot-password/', views.driver_forgot_password, name='driver_forgot_password'),
+    path('driver-dashboard/', driver_dashboard_home, name='driver_dashboard'),
+
 
     # Student Auth
     path('student-login/', views.student_login, name='student_login'),
